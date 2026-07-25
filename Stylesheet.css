@@ -1,0 +1,112 @@
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the whole page */
+body {
+    background-color: #eeeeee; /* light gray background like the screenshot */
+    font-family: Georgia, "Times New Roman", serif;
+    padding: 20px;
+}
+
+/* White box in the middle */
+.container {
+    width: 700px;
+    margin: 0 auto;              /* center the container */
+    background-color: white;
+    padding: 20px;
+}
+
+/* Main title */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Navigation bar */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navigation links */
+nav a {
+    margin: 0 25px;
+    color: #2f4f8f;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+/* Top section with text and image side by side */
+.intro {
+    display: flex;               /* puts text and image next to each other */
+    gap: 20px;                   /* space between text and image */
+    margin-bottom: 20px;
+}
+
+/* Left text section */
+.text-box {
+    width: 55%;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* Space between paragraphs */
+.text-box p {
+    margin-bottom: 18px;
+}
+
+/* Right image section */
+.side-image {
+    width: 45%;
+    display: flex;
+    align-items: center;         /* centers image vertically */
+}
+
+/* Image inside the top-right box */
+.side-image img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;           /* makes image fill the box nicely */
+    border: 1px solid #ccc;
+}
+
+/* Gallery section below */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 equal columns */
+    gap: 0;                          /* no gap to look like connected blocks */
+}
+
+/* Each gallery item box */
+.box {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;                /* hides extra parts of image */
+}
+
+/* Images fill their boxes */
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Video box size */
+.video-box {
+    height: 160px;
+}
+
+/* Video fills the box */
+.video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
