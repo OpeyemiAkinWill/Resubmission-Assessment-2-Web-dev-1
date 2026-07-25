@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover facts about Venus, Earth's hot neighbour.">
+  <title>Big Planetarium | Venus</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Big Planetarium home">BIG <span>PLANETARIUM</span></a>
+    <nav aria-label="Main navigation"><a href="index.html#milky-way">The Milky Way</a><a href="mercury.html">Mercury</a><a href="venus.html" aria-current="page">Venus</a><a href="mars.html">Mars</a></nav>
+  </header>
+  <main id="main-content">
+    <section class="planet-hero venus-hero" aria-labelledby="page-title">
+      <div><p class="eyebrow">Planet spotlight</p><h1 id="page-title">Venus: Earth’s hot neighbour</h1><p>Venus is similar in size to Earth, but its thick atmosphere traps heat. This makes it the hottest planet in our solar system.</p></div>
+      <div class="planet-art venus-art large" role="img" aria-label="Illustration of Venus, a yellow cloudy planet"></div>
+    </section>
+    <section class="section facts" aria-labelledby="facts-title"><h2 id="facts-title">Quick facts</h2><dl><div><dt>Distance from the Sun</dt><dd>About 108 million km</dd></div><div><dt>Length of a day</dt><dd>243 Earth days</dd></div><div><dt>Moons</dt><dd>0</dd></div><div><dt>Year length</dt><dd>225 Earth days</dd></div></dl></section>
+    <section class="section quiz" aria-labelledby="quiz-title" data-correct-answer="right" data-correct-message="Correct! Venus is the hottest planet because its thick atmosphere traps heat." data-wrong-message="Not quite. Venus is the hottest planet in our solar system."><p class="eyebrow">Try it</p><h2 id="quiz-title">Which planet is the hottest?</h2><p>Choose an answer, then check your idea.</p><fieldset><legend>Pick one answer</legend><label><input type="radio" name="answer" value="right"> Venus</label><label><input type="radio" name="answer" value="wrong"> Mercury</label><label><input type="radio" name="answer" value="wrong"> Mars</label></fieldset><button class="button" id="check-answer" type="button">Check answer</button><p id="quiz-result" class="quiz-result" aria-live="polite"></p></section>
+  </main>
+  <footer><p>Big Planetarium · Making space feel closer.</p></footer>
+</body>
+</html>
