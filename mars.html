@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover facts about Mars, the red planet.">
+  <title>Big Planetarium | Mars</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Big Planetarium home">
+      BIG 
+      <span>PLANETARIUM</span>
+    </a>
+    
+    <nav aria-label="Main navigation">
+      <a href="index.html#milky-way">The Milky Way</a>
+      <a href="mercury.html">Mercury</a>
+      <a href="venus.html">Venus</a>
+      <a href="mars.html" aria-current="page">Explore Mars</a>
+      <a href="index.html#watch">Watch</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="planet-hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Planet spotlight</p>
+        <h1 id="page-title">Mars: the red planet</h1>
+        <p>Rusty dust gives Mars its famous colour. It is the fourth planet from the Sun and is home to the largest volcano in our solar system.</p>
+      </div>
+      <div class="mars-art large" role="img" aria-label="Large illustration of Mars"></div>
+    </section>
+
+    <section class="section facts" aria-labelledby="facts-title">
+      <h2 id="facts-title">Quick facts</h2>
+      <dl>
+        <div>
+          <dt>Distance from the Sun</dt><dd>About 228 million km</dd></div>
+        <div><dt>Length of a day</dt><dd>24 hours and 37 minutes</dd></div>
+        <div><dt>Moons</dt><dd>2 — Phobos and Deimos</dd></div>
+        <div><dt>Year length</dt><dd>687 Earth days</dd></div>
+      </dl>
+    </section>
+
+    <section class="section quiz" aria-labelledby="quiz-title" data-correct-answer="right" data-correct-message="Correct! Iron in the Martian soil has rusted, giving Mars its red colour." data-wrong-message="Not quite. Mars looks red because its soil contains rusty iron.">
+      <p class="eyebrow">Try it</p>
+      <h2 id="quiz-title">Why is Mars red?</h2>
+      <p>Choose an answer, then check your idea.</p>
+      <fieldset>
+        <legend>Pick one answer</legend>
+        <label><input type="radio" name="answer" value="wrong"> It is always close to the Sun.</label>
+        <label><input type="radio" name="answer" value="right"> Its soil contains iron that has rusted.</label>
+        <label><input type="radio" name="answer" value="wrong"> It is covered in red oceans.</label>
+      </fieldset>
+      <button class="button" id="check-answer" type="button">Check answer</button>
+      <p id="quiz-result" class="quiz-result" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer><p>Big Planetarium · Making space feel closer.</p></footer>
+</body>
+</html>

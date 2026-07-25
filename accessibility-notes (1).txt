@@ -1,0 +1,155 @@
+# Big Planetarium Website: Development Documentation
+
+## 1. Project brief
+
+Big Planetarium is a Bristol-based educational organisation that wanted a simple, enjoyable website about space. The website needed to:
+
+- introduce visitors to the Milky Way;
+- include at least one separate page about a planet;
+- use interesting visuals;
+- include video or other interactive media; and
+- be accessible to as many people as possible.
+
+The finished prototype includes a landing page about the Milky Way and three planet pages: Mercury, Venus and Mars.
+
+## 2. Planning and development steps
+
+1. I read the project brief and listed the required features: a landing page, planet information, visuals, media and accessibility.
+2. I planned a small navigation menu so visitors could move easily between the home page and the planet pages.
+3. I created the basic HTML layout for the landing page using a header, navigation, main content and footer.
+4. I added sections that introduce the Milky Way, explain a few simple facts, highlight Mars and show a NASA video.
+5. I made a separate Mars page with an introduction, quick facts and a short quiz. Later, matching Mercury and Venus pages were added so the website has a more complete collection of planets.
+6. I wrote one shared stylesheet, `styles.css`, to keep the pages visually consistent and to make future changes easier.
+7. I added `script.js` to make the quizzes respond when a visitor chooses an answer and selects the **Check answer** button.
+8. I checked that all internal links point to the correct pages and that the JavaScript has no syntax errors.
+9. I reviewed the structure and styles for accessibility, including keyboard use, text contrast, clear headings and mobile layouts.
+
+## 3. File structure
+
+| File | Purpose |
+| --- | --- |
+| `index.html` | Landing page about the Milky Way. |
+| `mercury.html` | Information and quiz page for Mercury. |
+| `venus.html` | Information and quiz page for Venus. |
+| `mars.html` | Information and quiz page for Mars. |
+| `styles.css` | Shared colours, layout, responsive rules and visual design. |
+| `script.js` | Quiz functionality used by all three planet pages. |
+| `accessibility-notes.md` | This development and accessibility documentation. |
+
+## 4. Page content and purpose
+
+### Landing page (`index.html`)
+
+The landing page is the starting point for visitors. It contains:
+
+- A header with the Big Planetarium logo and navigation links.
+- A hero section with the main heading, **Our place in the Milky Way**, a short introduction and a button that takes the user to the next section.
+- A **Galaxy basics** section with three simple cards. These explain the number of stars, the Milky Way's spiral shape and Earth's location in the galaxy.
+- A Mars feature section that links to the dedicated Mars page.
+- A native HTML video player containing a NASA video about the Milky Way in different wavelengths. A direct NASA link is provided as a fallback if the video cannot be played.
+
+### Planet pages (`mercury.html`, `venus.html` and `mars.html`)
+
+Each planet page follows the same layout so it is familiar to the visitor:
+
+- A page title and short introductory paragraph.
+- A decorative CSS planet illustration.
+- A quick-facts section that uses a definition list (`dl`, `dt` and `dd`). This suits information where a label, such as **Moons**, has a matching value.
+- A one-question multiple-choice quiz that gives immediate feedback.
+
+The facts are written in short, clear sentences and use rounded distances. This keeps the information appropriate for a general audience rather than making it feel too technical.
+
+## 5. HTML structure and attributes
+
+The HTML uses semantic elements. Semantic elements describe the role of the content, which helps both visitors and assistive technology.
+
+| Element or attribute | How it is used | Why it is useful |
+| --- | --- | --- |
+| `<header>` | Contains the site logo and navigation. | Identifies the top area of the page. |
+| `<nav aria-label="Main navigation">` | Groups the main page links. | Gives screen-reader users a useful name for the navigation area. |
+| `<main id="main-content">` | Holds the main content of every page. | Gives the page a clear main landmark and works with the skip link. |
+| `<section>` and `aria-labelledby` | Groups related content, with each section connected to its heading. | Creates meaningful page structure. |
+| `<h1>`, `<h2>` and `<h3>` | Used in a logical order. | Allows users to scan the page and navigate by headings. |
+| `lang="en"` | Set on the `<html>` element. | Helps screen readers use the correct pronunciation rules. |
+| `meta name="viewport"` | Included in every page. | Makes the layout respond correctly on phones and tablets. |
+| `meta name="description"` | Summarises each page. | Helps describe the page in search results. |
+| `aria-current="page"` | Used on the active planet link. | Tells screen-reader users which page they are currently viewing. |
+| `role="img"` and `aria-label` | Added to the CSS-only galaxy and planet illustrations. | Provides a short text description because CSS backgrounds are not announced automatically. |
+| `<video controls>` | Displays the NASA video with built-in player controls. | Lets the visitor pause, play, change volume and use keyboard controls. |
+| `<fieldset>` and `<legend>` | Groups each quiz question and its radio buttons. | Makes the question and choices clearer to screen-reader users. |
+| `aria-live="polite"` | Added to the quiz answer message. | Announces feedback after the button is selected without interrupting the user. |
+
+## 6. CSS design and layout
+
+The stylesheet is shared by every page. This prevents repeated styling and gives the site a consistent appearance.
+
+- CSS custom properties in `:root` store the main colours, such as navy, gold and red. If a colour needs changing, it can be changed once instead of in many places.
+- CSS Grid is used for the hero areas, information cards, planet features and fact boxes. It keeps related content aligned on wider screens.
+- The `clamp()` function is used for large headings. This lets headings grow on large screens but remain sensible on smaller screens.
+- CSS gradients are used to create the galaxy and planet illustrations. This means the website does not rely on large image files, and the illustrations scale without becoming blurry.
+- Cards use white backgrounds and shadows to separate the information from the page background.
+- A media query at `max-width: 700px` changes multi-column layouts into one column. This makes the content easier to read on a phone.
+
+## 7. JavaScript functionality
+
+`script.js` controls the quizzes on the planet pages.
+
+When a visitor selects **Check answer**, the script:
+
+1. checks whether a radio button has been selected;
+2. asks the user to choose an answer if none has been selected;
+3. compares the selected answer with the correct answer; and
+4. displays either the correct feedback or a helpful correction.
+
+The correct answer and feedback messages are stored in `data-*` attributes on the quiz section. For example, `data-correct-answer="right"` identifies the correct option. This allows the same JavaScript file to work for Mercury, Venus and Mars while each page keeps its own question and answer text.
+
+## 8. Accessibility techniques
+
+Accessibility was considered in the content, code and design so that the site is perceivable, operable and understandable for a wider range of users.
+
+### Perceivable
+
+- Text and important controls use strong contrast against their backgrounds. For example, dark navy text appears on pale backgrounds, and white text appears on dark blue sections.
+- Important information is written as text, not only shown with colour or an image. The quiz result is always shown as a written sentence.
+- The CSS-only galaxy and planet illustrations have text alternatives through `role="img"` and `aria-label`.
+- The video has standard player controls and a separate NASA fallback link.
+- The layout can be resized because it uses flexible units, Grid and responsive media queries.
+
+### Operable
+
+- All navigation links, buttons and quiz controls work with a keyboard.
+- A visible `:focus-visible` outline shows keyboard users which link, button or control is currently selected.
+- The **Skip to main content** link is placed at the start of every page. It becomes visible when focused and lets keyboard users bypass repeated navigation.
+- Links and buttons have clear text labels, such as **Start exploring**, **Visit the Mars page** and **Check answer**.
+- The video uses the browser's built-in accessible controls instead of a custom player.
+- The site respects `prefers-reduced-motion`. Smooth scrolling is disabled for users who have asked their device to reduce motion.
+
+### Understandable
+
+- Headings are in a sensible order, with one page heading followed by section headings.
+- The navigation menu appears in the same location and order on each page.
+- Each page uses a similar layout, so visitors learn how to find introductions, facts and quizzes.
+- Planet facts are kept short and use simple language.
+- The quiz provides immediate, plain-language feedback and does not punish an incorrect answer.
+
+### Robust
+
+- The HTML uses standard, semantic elements rather than relying only on generic `<div>` elements.
+- Form controls use native radio buttons and a standard button, which are supported by browsers and assistive technology.
+- The `aria-live` region means quiz feedback can be announced by screen readers.
+- The website works without JavaScript for reading the information and navigating between pages. JavaScript is only needed for the interactive quiz feedback.
+
+## 9. Testing carried out
+
+The following checks were completed during development:
+
+- Tested the internal navigation links between the home page and planet pages.
+- Checked that the NASA video source is reachable and included a fallback link.
+- Checked `script.js` for syntax errors.
+- Checked that CSS opening and closing braces are balanced after formatting.
+- Reviewed the site at smaller screen widths using the responsive CSS rules.
+- Checked that the interactive controls can be reached with the keyboard and have a visible focus state.
+
+## 10. Possible future improvements
+
+If the project were developed further, I would add captions or a transcript for the video, more planet pages, a source list for planet facts and a larger interactive solar-system activity.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover facts about Mercury, the closest planet to the Sun.">
+  <title>Big Planetarium | Mercury</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Big Planetarium home">BIG <span>PLANETARIUM</span></a>
+    <nav aria-label="Main navigation"><a href="index.html#milky-way">The Milky Way</a><a href="mercury.html" aria-current="page">Mercury</a><a href="venus.html">Venus</a><a href="mars.html">Mars</a></nav>
+  </header>
+  <main id="main-content">
+    <section class="planet-hero mercury-hero" aria-labelledby="page-title">
+      <div><p class="eyebrow">Planet spotlight</p><h1 id="page-title">Mercury: small and speedy</h1><p>Mercury is the closest planet to the Sun. Its surface is covered in craters, and it travels around the Sun faster than any other planet.</p></div>
+      <div class="planet-art mercury-art large" role="img" aria-label="Illustration of Mercury, a grey cratered planet"></div>
+    </section>
+    <section class="section facts" aria-labelledby="facts-title"><h2 id="facts-title">Quick facts</h2><dl><div><dt>Distance from the Sun</dt><dd>About 58 million km</dd></div><div><dt>Length of a day</dt><dd>About 59 Earth days</dd></div><div><dt>Moons</dt><dd>0</dd></div><div><dt>Year length</dt><dd>88 Earth days</dd></div></dl></section>
+    <section class="section quiz" aria-labelledby="quiz-title" data-correct-answer="right" data-correct-message="Correct! Mercury is the closest planet to the Sun." data-wrong-message="Not quite. Mercury is the closest planet to the Sun."><p class="eyebrow">Try it</p><h2 id="quiz-title">Which planet is closest to the Sun?</h2><p>Choose an answer, then check your idea.</p><fieldset><legend>Pick one answer</legend><label><input type="radio" name="answer" value="wrong"> Venus</label><label><input type="radio" name="answer" value="right"> Mercury</label><label><input type="radio" name="answer" value="wrong"> Mars</label></fieldset><button class="button" id="check-answer" type="button">Check answer</button><p id="quiz-result" class="quiz-result" aria-live="polite"></p></section>
+  </main>
+  <footer><p>Big Planetarium · Making space feel closer.</p></footer>
+</body>
+</html>
